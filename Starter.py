@@ -35,12 +35,16 @@ def add_movie():
 
 
 def view_movies():
-
-    # Debugging task: check why the program crashes when the list is empty
-    if movies == "":
+    if not movies:
         print("No movies available")
-
-    # TODO: display all movies stored in the list
+        return
+    
+    print("\nMovie Collection:")
+    for i, movie in enumerate(movies, 1):
+        print(f"{i}. {movie['title']}")
+        print(f"   Genre  : {movie['genre']}")
+        print(f"   Rating : {movie['rating']}/10")
+        print("_" * 40)
     pass
 
 
