@@ -2,10 +2,12 @@
 # Movie Collection Manager (Starter Template)
 # Lecturer: Mohd Faiz bin Alias
 
-movies = []
+movies = [
+    {"title": "Inception", "genre": "Sci-Fi", "rating": 8.8},
+    {"title": "The Dark Knight", "genre": "Action", "rating": 8.9},
+    {"title": "Interstellar", "genre": "Sci-Fi", "rating": 8.6}
+]
 
-# Example movie structure:
-# {"title": "Movie Name", "genre": "Genre", "rating": "8"}
 
 def show_menu():
     print("\nMovie Collection Manager")
@@ -15,7 +17,7 @@ def show_menu():
     print("4. Exit")
 
 def add_movie():
-    """Add a new movie to the collection"""
+
     title = input("Enter movie title: ").strip()
     genre = input("Enter genre: ").strip()
     
@@ -31,7 +33,7 @@ def add_movie():
     
     movies.append({"title": title, "genre": genre, "rating": rating})
     print(f"Movie '{title}' added successfully!")
-    pass
+    
 
 
 def view_movies():
@@ -45,7 +47,7 @@ def view_movies():
         print(f"   Genre  : {movie['genre']}")
         print(f"   Rating : {movie['rating']}/10")
         print("_" * 40)
-    pass
+
 
 
 def search_movie():
