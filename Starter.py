@@ -15,8 +15,22 @@ def show_menu():
     print("4. Exit")
 
 def add_movie():
-    # TODO: ask user for title, genre and rating
-    # TODO: store the movie in the movies list
+    """Add a new movie to the collection"""
+    title = input("Enter movie title: ").strip()
+    genre = input("Enter genre: ").strip()
+    
+    while True:
+        try:
+            rating = float(input("Enter rating (0-10): "))
+            if 0 <= rating <= 10:
+                break
+            else:
+                print("Rating must be between 0-10.")
+        except ValueError:
+            print("Please enter a valid number.")
+    
+    movies.append({"title": title, "genre": genre, "rating": rating})
+    print(f"Movie '{title}' added successfully!")
     pass
 
 
