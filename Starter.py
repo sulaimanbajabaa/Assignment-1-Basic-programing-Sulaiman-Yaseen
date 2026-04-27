@@ -51,10 +51,21 @@ def view_movies():
 
 
 def search_movie():
-    # TODO: ask user for movie title
-    # TODO: search movie in the list
-    # TODO: display result
-    pass
+    """Search for a movie by title"""
+    search_title = input("Enter movie title to search: ").strip().lower()
+    
+    found = False
+    for movie in movies:
+        if search_title in movie['title'].lower():
+            print(f"\nMovie found!")
+            print(f"Title  : {movie['title']}")
+            print(f"Genre  : {movie['genre']}")
+            print(f"Rating : {movie['rating']}/10")
+            found = True
+            break
+    
+    if not found:
+        print(f"Movie '{search_title}' not found.")
 
 
 def main():
